@@ -10,17 +10,17 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../../home.html">EstateLink</a>
+      <a class="navbar-brand fw-bold" href="{% url 'home' %}">EstateLink</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="../../home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../properties/listings.html">Listings</a></li>
-          <li class="nav-item"><a class="nav-link" href="../properties/manage.html">Manage Properties</a></li>
-          <li class="nav-item"><a class="nav-link active" href="register.html">Register</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'property_list' %}">Listings</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'manage_properties' %}">Manage Properties</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{% url 'register' %}">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
         </ul>
       </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <form class="form-panel auth-panel" action="login.html" method="get">
+          <form class="form-panel auth-panel" action="{% url 'login' %}" method="get">
             <p class="eyebrow text-primary">Create account</p>
             <h1 class="fw-bold mb-3">Register</h1>
             <div class="row g-3">
@@ -62,7 +62,7 @@
                 <button type="submit" class="btn btn-primary btn-lg w-100">Create Account</button>
               </div>
             </div>
-            <p class="text-muted mt-3 mb-0">Already have an account? <a href="login.html">Login</a></p>
+            <p class="text-muted mt-3 mb-0">Already have an account? <a href="{% url 'login' %}">Login</a></p>
           </form>
         </div>
       </div>

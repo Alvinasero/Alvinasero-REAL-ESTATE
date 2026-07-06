@@ -10,16 +10,16 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../../home.html">EstateLink</a>
+      <a class="navbar-brand fw-bold" href="{% url 'home' %}">EstateLink</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="../../home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="listings.html">Listings</a></li>
-          <li class="nav-item"><a class="nav-link active" href="manage.html">Manage Properties</a></li>
-          <li class="nav-item"><a class="nav-link" href="../auth/login.html">Logout</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'property_list' %}">Listings</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{% url 'manage_properties' %}">Manage Properties</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -34,7 +34,7 @@
           <p class="section-copy">Frontend screen for adding, editing, deleting, and uploading property images. Your existing database can connect to these controls later.</p>
         </div>
         <div class="col-lg-4 text-lg-end">
-          <a href="add.html" class="btn btn-primary btn-lg">Add Property</a>
+          <a href="{% url 'add_property' %}" class="btn btn-primary btn-lg">Add Property</a>
         </div>
       </div>
 
@@ -64,7 +64,7 @@
               <td>$420K</td>
               <td><span class="badge text-bg-primary">Published</span></td>
               <td class="text-lg-end">
-                <a href="edit.html" class="btn btn-sm btn-outline-primary">Edit</a>
+                <a href="{% url 'edit_property' %}" class="btn btn-sm btn-outline-primary">Edit</a>
                 <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
               </td>
             </tr>
@@ -82,7 +82,7 @@
               <td>$180K</td>
               <td><span class="badge text-bg-primary">Published</span></td>
               <td class="text-lg-end">
-                <a href="edit.html" class="btn btn-sm btn-outline-primary">Edit</a>
+                <a href="{% url 'edit_property' %}" class="btn btn-sm btn-outline-primary">Edit</a>
                 <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
               </td>
             </tr>
@@ -91,6 +91,8 @@
       </div>
     </div>
   </main>
+
+  {% include "footer.html" %}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -10,18 +10,18 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../../home.html">EstateLink</a>
+      <a class="navbar-brand fw-bold" href="{% url 'home' %}">EstateLink</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="../../home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="listings.html">Listings</a></li>
-          <li class="nav-item"><a class="nav-link" href="manage.html">Manage Properties</a></li>
-          <li class="nav-item"><a class="nav-link" href="../inquiries/contact-agent.html">Contact Agent</a></li>
-          <li class="nav-item"><a class="nav-link" href="../auth/register.html">Register</a></li>
-          <li class="nav-item"><a class="nav-link" href="../auth/login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{% url 'property_list' %}">Listings</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'manage_properties' %}">Manage Properties</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact_agent' %}">Contact Agent</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
         </ul>
       </div>
     </div>
@@ -33,7 +33,7 @@
         <p class="eyebrow text-primary">Available homes</p>
         <h1 class="fw-bold">Property Listings</h1>
         <p class="section-copy">Responsive cards keep each property easy to compare on desktop, tablet, and mobile screens.</p>
-        <a href="add.html" class="btn btn-primary mt-3">Add Property</a>
+        <a href="{% url 'add_property' %}" class="btn btn-primary mt-3">Add Property</a>
       </div>
 
       <div class="row g-4">
@@ -50,7 +50,7 @@
               <div class="property-meta mt-auto">
                 <span>4 Beds</span><span>3 Baths</span><span>Villa</span>
               </div>
-              <a href="detail.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="{% url 'property_detail' %}" class="btn btn-primary mt-3">View Details</a>
             </div>
           </article>
         </div>
@@ -67,7 +67,7 @@
               <div class="property-meta mt-auto">
                 <span>2 Beds</span><span>2 Baths</span><span>Apartment</span>
               </div>
-              <a href="detail.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="{% url 'property_detail' %}" class="btn btn-primary mt-3">View Details</a>
             </div>
           </article>
         </div>
@@ -84,7 +84,7 @@
               <div class="property-meta mt-auto">
                 <span>3 Beds</span><span>3 Baths</span><span>Townhouse</span>
               </div>
-              <a href="detail.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="{% url 'property_detail' %}" class="btn btn-primary mt-3">View Details</a>
             </div>
           </article>
         </div>
@@ -101,7 +101,7 @@
               <div class="property-meta mt-auto">
                 <span>3 Beds</span><span>2 Baths</span><span>House</span>
               </div>
-              <a href="detail.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="{% url 'property_detail' %}" class="btn btn-primary mt-3">View Details</a>
             </div>
           </article>
         </div>
@@ -118,7 +118,7 @@
               <div class="property-meta mt-auto">
                 <span>4 Beds</span><span>4 Baths</span><span>Duplex</span>
               </div>
-              <a href="detail.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="{% url 'property_detail' %}" class="btn btn-primary mt-3">View Details</a>
             </div>
           </article>
         </div>
@@ -135,13 +135,15 @@
               <div class="property-meta mt-auto">
                 <span>5 Beds</span><span>4 Baths</span><span>Residence</span>
               </div>
-              <a href="detail.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="{% url 'property_detail' %}" class="btn btn-primary mt-3">View Details</a>
             </div>
           </article>
         </div>
       </div>
     </div>
   </main>
+
+  {% include "footer.html" %}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

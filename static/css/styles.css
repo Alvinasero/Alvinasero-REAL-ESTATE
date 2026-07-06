@@ -30,18 +30,26 @@ a {
 }
 
 .navbar-brand {
-  color: var(--primary-dark);
+  color: #0b3d38;
   letter-spacing: 0;
 }
 
 .nav-link {
-  color: #42505c;
+  color: #17202a;
   font-weight: 500;
+  border-radius: 8px;
+  padding-inline: 0.75rem !important;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--primary) !important;
+  background: rgba(20, 108, 99, 0.1);
+  color: #0d4d47 !important;
+}
+
+.nav-link:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(20, 108, 99, 0.22);
+  outline: 0;
 }
 
 .btn {

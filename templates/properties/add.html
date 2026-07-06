@@ -10,15 +10,15 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../../home.html">EstateLink</a>
+      <a class="navbar-brand fw-bold" href="{% url 'home' %}">EstateLink</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="../../home.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="listings.html">Listings</a></li>
-          <li class="nav-item"><a class="nav-link active" href="manage.html">Manage Properties</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'property_list' %}">Listings</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{% url 'manage_properties' %}">Manage Properties</a></li>
         </ul>
       </div>
     </div>
@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-9">
-          <form class="form-panel" action="manage.html" method="get">
+          <form class="form-panel" action="{% url 'manage_properties' %}" method="get">
             <p class="eyebrow text-primary">New listing</p>
             <h1 class="fw-bold mb-3">Add Property</h1>
             <div class="row g-3">
@@ -73,7 +73,7 @@
               </div>
               <div class="col-12 d-flex flex-wrap gap-2">
                 <button type="submit" class="btn btn-primary btn-lg">Add Property</button>
-                <a href="manage.html" class="btn btn-outline-primary btn-lg">Cancel</a>
+                <a href="{% url 'manage_properties' %}" class="btn btn-outline-primary btn-lg">Cancel</a>
               </div>
             </div>
           </form>
@@ -81,6 +81,8 @@
       </div>
     </div>
   </main>
+
+  {% include "footer.html" %}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
