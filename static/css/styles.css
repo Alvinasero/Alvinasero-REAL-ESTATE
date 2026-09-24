@@ -307,15 +307,20 @@ a {
 }
 
 .auth-section.page-bg::before {
-  background: rgba(245, 247, 244, 0.38);
+  /* The gradient is part of the page background, like the home hero. */
+  background: transparent;
 }
 
 .auth-section.login-bg {
-  background-image: url("https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1800&q=90");
+  background-image:
+    linear-gradient(90deg, rgba(13, 32, 38, 0.62) 0%, rgba(13, 32, 38, 0.38) 48%, rgba(13, 32, 38, 0.1) 100%),
+    url("https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=1800&q=90");
 }
 
 .auth-section.register-bg {
-  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=90");
+  background-image:
+    linear-gradient(90deg, rgba(13, 32, 38, 0.62) 0%, rgba(13, 32, 38, 0.38) 48%, rgba(13, 32, 38, 0.1) 100%),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=90");
 }
 
 .auth-panel {
