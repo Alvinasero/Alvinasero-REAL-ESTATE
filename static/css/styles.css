@@ -17,6 +17,215 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e7edf1;
+  --muted: #adb9c3;
+  --line: #3a4a56;
+  --soft: #152129;
+  --panel: #1c2a33;
+  --primary: #45c1b2;
+  --primary-dark: #96e4db;
+  --accent: #f0a474;
+  --sky: #203b43;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] body {
+  background: #101a20;
+}
+
+html[data-theme="dark"] .navbar.bg-white,
+html[data-theme="dark"] footer.bg-white,
+html[data-theme="dark"] .stat-strip {
+  background: #16242c !important;
+  border-color: var(--line) !important;
+}
+
+html[data-theme="dark"] .navbar-brand,
+html[data-theme="dark"] .nav-link,
+html[data-theme="dark"] .text-muted,
+html[data-theme="dark"] .property-meta span {
+  color: var(--ink) !important;
+}
+
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-select {
+  background-color: #132027;
+  color: var(--ink);
+}
+
+html[data-theme="dark"] .form-control::placeholder {
+  color: #91a0ab;
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .table {
+  --bs-card-bg: var(--panel);
+  --bs-card-color: var(--ink);
+  --bs-table-bg: var(--panel);
+  --bs-table-color: var(--ink);
+  --bs-table-border-color: var(--line);
+}
+
+html[data-theme="dark"] .navbar-toggler {
+  filter: invert(1);
+}
+
+.theme-toggle-wrap {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.theme-toggle-input {
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin: 0.3rem 0 0.3rem 0.5rem;
+  padding: 0.38rem 0.65rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: rgba(20, 108, 99, 0.12);
+  border-color: var(--primary);
+  outline: 0;
+}
+
+.theme-toggle-input:focus-visible + .theme-toggle {
+  box-shadow: 0 0 0 0.2rem rgba(20, 108, 99, 0.22);
+}
+
+/* Native checkbox fallback: the color change still works if JavaScript is unavailable. */
+html:has(.theme-toggle-input:checked) {
+  color-scheme: dark;
+  --ink: #e7edf1;
+  --muted: #adb9c3;
+  --line: #3a4a56;
+  --soft: #152129;
+  --panel: #1c2a33;
+  --primary: #45c1b2;
+  --primary-dark: #96e4db;
+  --accent: #f0a474;
+  --sky: #203b43;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+html:has(.theme-toggle-input:checked) body {
+  background: #101a20;
+}
+
+html:has(.theme-toggle-input:checked) .navbar.bg-white,
+html:has(.theme-toggle-input:checked) footer.bg-white,
+html:has(.theme-toggle-input:checked) .stat-strip {
+  background: #16242c !important;
+  border-color: var(--line) !important;
+}
+
+html:has(.theme-toggle-input:checked) .navbar-brand,
+html:has(.theme-toggle-input:checked) .nav-link,
+html:has(.theme-toggle-input:checked) .text-muted,
+html:has(.theme-toggle-input:checked) .property-meta span {
+  color: var(--ink) !important;
+}
+
+html:has(.theme-toggle-input:checked) .form-control,
+html:has(.theme-toggle-input:checked) .form-select {
+  background-color: #132027;
+  color: var(--ink);
+}
+
+html:has(.theme-toggle-input:checked) .card,
+html:has(.theme-toggle-input:checked) .table {
+  --bs-card-bg: var(--panel);
+  --bs-card-color: var(--ink);
+  --bs-table-bg: var(--panel);
+  --bs-table-color: var(--ink);
+  --bs-table-border-color: var(--line);
+}
+
+/* Full-page dark palette applied directly by the theme switch. */
+html.dark-theme,
+html:has(.theme-toggle-input:checked) {
+  background: #101a20;
+}
+
+html.dark-theme body,
+html:has(.theme-toggle-input:checked) body {
+  background: #101a20 !important;
+  color: #e7edf1;
+}
+
+html.dark-theme .navbar,
+html.dark-theme .navbar.bg-white,
+html.dark-theme footer,
+html.dark-theme footer.bg-white,
+html.dark-theme .stat-strip,
+html:has(.theme-toggle-input:checked) .navbar,
+html:has(.theme-toggle-input:checked) .navbar.bg-white,
+html:has(.theme-toggle-input:checked) footer,
+html:has(.theme-toggle-input:checked) footer.bg-white,
+html:has(.theme-toggle-input:checked) .stat-strip {
+  background: #16242c !important;
+  color: #e7edf1 !important;
+}
+
+html.dark-theme main,
+html.dark-theme .bg-soft,
+html:has(.theme-toggle-input:checked) main,
+html:has(.theme-toggle-input:checked) .bg-soft {
+  color: #e7edf1;
+}
+
+html.dark-theme .search-panel,
+html.dark-theme .info-panel,
+html.dark-theme .form-panel,
+html.dark-theme .auth-panel,
+html.dark-theme .agent-card,
+html.dark-theme .property-card,
+html.dark-theme .card,
+html:has(.theme-toggle-input:checked) .search-panel,
+html:has(.theme-toggle-input:checked) .info-panel,
+html:has(.theme-toggle-input:checked) .form-panel,
+html:has(.theme-toggle-input:checked) .auth-panel,
+html:has(.theme-toggle-input:checked) .agent-card,
+html:has(.theme-toggle-input:checked) .property-card,
+html:has(.theme-toggle-input:checked) .card {
+  background: #1c2a33 !important;
+  color: #e7edf1 !important;
+}
+
+html.dark-theme .nav-link,
+html.dark-theme .navbar-brand,
+html.dark-theme .section-copy,
+html.dark-theme .text-muted,
+html.dark-theme .form-label,
+html:has(.theme-toggle-input:checked) .nav-link,
+html:has(.theme-toggle-input:checked) .navbar-brand,
+html:has(.theme-toggle-input:checked) .section-copy,
+html:has(.theme-toggle-input:checked) .text-muted,
+html:has(.theme-toggle-input:checked) .form-label {
+  color: #e7edf1 !important;
+}
+
+html.dark-theme .auth-section.page-bg::before,
+html:has(.theme-toggle-input:checked) .auth-section.page-bg::before {
+  background: rgba(8, 18, 23, 0.58);
+}
+
 a {
   color: var(--primary);
 }
